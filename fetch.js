@@ -3,11 +3,15 @@ const mainFetch = document.getElementById('mainFetch');
 async function fetchData(params) {
     fetch(params)
     .then((response) => response.json())
-    .then((result) => result.map(function(elem) {
-        
-        const h2 = document.createElement("h2");
-        h2.textContent = `${elem.name}`;
-        mainFetch.appendChild(h2)
+    .then((result) => 
+        result.map(function(elem) {
+        console.log(elem)
+        const div = document.createElement("div");
+        div.innerHTML = `
+        <h2>${elem.name}</h2>
+        <h3>${elem.htmlCode[0]}</h3>
+        <hr></hr>`;
+        mainFetch.appendChild(div);
     }))
     .catch((error) => console.log(error));
 }
