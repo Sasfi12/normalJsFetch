@@ -8,9 +8,9 @@ async function fetchData(params) {
         console.log(elem)
         const div = document.createElement("div");
         div.innerHTML = `
-        <h2>${elem.name}</h2>
-        <h3>${elem.htmlCode[0]}</h3>
-        <hr></hr>`;
+            <h2>${elem.name}</h2>
+            <h3>${elem.htmlCode[0]}</h3>
+            <hr></hr>`;
         mainFetch.appendChild(div);
     }))
     .catch((error) => console.log(error));
